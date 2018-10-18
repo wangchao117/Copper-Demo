@@ -388,6 +388,8 @@
             var $cropper;
             var $cropBox;
             var $face;
+            var $face1;
+            var $face2;
 
             if (!this.ready) {
                 return;
@@ -406,6 +408,8 @@
             this.$cropBox = $cropBox = $cropper.find('.cropper-crop-box');
             this.$viewBox = $cropper.find('.cropper-view-box');
             this.$face = $face = $cropBox.find('.cropper-face');
+            this.$face1 = $face1 = $cropBox.find('.cropper-face1');
+            this.$face2 = $face2 = $cropBox.find('.cropper-face2');
 
             // Hide the original image
             $this.addClass(CLASS_HIDDEN).after($cropper);
@@ -441,10 +445,14 @@
 
             if (options.cropBoxMovable) {
                 $face.addClass(CLASS_MOVE).data('action', ACTION_ALL);
+                $face1.addClass(CLASS_MOVE).data('action', ACTION_ALL);
+                $face2.addClass(CLASS_MOVE).data('action', ACTION_ALL);
             }
 
             if (!options.highlight) {
                 $face.addClass(CLASS_INVISIBLE);
+                $face1.addClass(CLASS_INVISIBLE);
+                $face2.addClass(CLASS_INVISIBLE);
             }
 
             if (options.background) {
@@ -855,6 +863,8 @@
 
                 // Turn to move the canvas when the crop box is equal to the container
                 this.$face.data('action', (cropBox.width === containerWidth && cropBox.height === containerHeight) ? ACTION_MOVE : ACTION_ALL);
+                this.$face1.data('action', (cropBox.width === containerWidth && cropBox.height === containerHeight) ? ACTION_MOVE : ACTION_ALL);
+                this.$face2.data('action', (cropBox.width === containerWidth && cropBox.height === containerHeight) ? ACTION_MOVE : ACTION_ALL);
             }
 
             this.$cropBox.css({
@@ -1129,7 +1139,6 @@
             var options = this.options;
             var originalEvent = event.originalEvent;
             var touches = originalEvent && originalEvent.touches;
-            console.log(options)
             var e = event;
             var touchesLength;
             var action;
@@ -2293,6 +2302,14 @@
                         data('action', mode).
                         toggleClass(CLASS_CROP, croppable).
                         toggleClass(CLASS_MOVE, movable);
+                    this.$face1.
+                        data('action', mode).
+                        toggleClass(CLASS_CROP, croppable).
+                        toggleClass(CLASS_MOVE, movable);
+                    this.$face2.
+                        data('action', mode).
+                        toggleClass(CLASS_CROP, croppable).
+                        toggleClass(CLASS_MOVE, movable);
                 }
             }
         }
@@ -2406,6 +2423,8 @@
         '<span class="cropper-dashed dashed-v"></span>' +
         '<span class="cropper-center"></span>' +
         '<span class="cropper-face"></span>' +
+        '<span class="cropper-face1"></span>' +
+        '<span class="cropper-face2"></span>' +
         '<span class="cropper-line line-e" data-action="e"></span>' +
         '<span class="cropper-line line-n" data-action="n"></span>' +
         '<span class="cropper-line line-w" data-action="w"></span>' +
