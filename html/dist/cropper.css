@@ -122,8 +122,6 @@
 }
 
 .cropper-face,
-.cropper-face1,
-.cropper-face2,
 .cropper-line,
 .cropper-point {
   position: absolute;
@@ -135,25 +133,9 @@
 }
 
 .cropper-face {
-  width: 50%;
-  height: 50%;
-  top: 100px;
-  left: 100px;
-  background-color: red;
-}
-.cropper-face1{
-  width: 50%;
-  height: 50%;
-  top: 140px;
-  left: 140px;
-  background-color: blue;
-}
-.cropper-face2{
-  width: 50%;
-  height: 50%;
-  top: 180px;
-  left: 180px;
-  background-color: #ccc;
+  top: 0;
+  left: 0;
+  background-color: #fff;
 }
 
 .cropper-line {
