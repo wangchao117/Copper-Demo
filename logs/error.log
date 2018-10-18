@@ -77,3 +77,21 @@
 2018/10/18 14:39:19 [alert] 6776#5492: accept() failed (10022: An invalid argument was supplied)
 2018/10/18 14:39:19 [alert] 6776#5492: accept() failed (10022: An invalid argument was supplied)
 2018/10/18 14:41:18 [error] 8184#10116: *1 CreateFile() "C:\nginx-test/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/default.html"
+2018/10/18 15:22:31 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:22:31 [error] 724#11368: *1 CreateFile() "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2018/10/18 15:22:40 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:22:49 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:23:46 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:23:47 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:23:56 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:24:04 [emerg] 13524#9084: unknown directive "default" in C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/conf/nginx.conf:42
+2018/10/18 15:24:09 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:24:14 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:24:33 [error] 724#11368: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:24:45 [emerg] 680#13964: unknown directive "default" in C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/conf/nginx.conf:42
+2018/10/18 15:24:45 [alert] 7344#12884: worker process 680 exited with code 1
+2018/10/18 15:24:45 [alert] 7344#12884: could not respawn worker
+2018/10/18 15:25:00 [emerg] 6168#5932: unknown directive "default" in C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/conf/nginx.conf:42
+2018/10/18 15:25:58 [error] 10796#6584: *1 directory index of "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2018/10/18 15:25:59 [error] 6020#2516: *1 CreateFile() "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/index"
+2018/10/18 15:31:14 [error] 6068#8016: *3 CreateFile() "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/index"
