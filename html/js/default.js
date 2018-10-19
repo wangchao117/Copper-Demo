@@ -226,19 +226,15 @@ $(function () {
                     mydata["type"] = imgType.toUpperCase();
                     mydata["encodedImage"] = encode;
                     allImgs.push(mydata);
-                    console.log(mydata.encodedImage)
                     // wangchaogai 加图片结构
                     $('.showPic').show();
                     $('.showTimu').hide();
-                    var str
-                    for (var i=0; i<allImgs.length; i++) {
-                        str += `<div class="imgwrap">
-                                    <span>`+ (i + 1) +`</span>
-                                    <img src="`+ allImgs[i].encodedImage +`" alt="">
-                                    <p>×</p>
-                                </div>`;
-                    }
-                    $('.showPic').html(str);
+                    renderImg();
+                    $('.imgwrap').on('click', function() {
+                        // console.log($(this).index());
+                        allImgs.splice($(this).index(), 1);
+                        this.remove();
+                    })
                     // wangchaogai-jieshu
                 }
 
@@ -269,9 +265,9 @@ $(function () {
 
                     // wangchaogai  上面的废了，需要改接口传数组
                     for (var i=0; i<allImgs.length; i++) {
-                        allImgs[i].encodedImage = (allImgs[i].encodedImage).toDataURL().replace('data:image/png;base64,', '');
-                        allImgs[i].encodedImage = 
+                        allImgs[i].encodedImage = (allImgs[i].encodedImage).replace('data:image/png;base64,', '');
                     }
+                    console.log(allImgs)
                     // wangchaogai-jieshu
 
                     $.ajax({
@@ -352,6 +348,29 @@ $(function () {
             }
         });
 
+        // wangchaoxiugai
+        function renderImg() {
+            var str
+            for (var i=0; i<allImgs.length; i++) {
+                str += `<div class="imgwrap">
+                            <span>`+ (i + 1) +`</span>
+                            <img src="`+ allImgs[i].encodedImage +`" alt="">
+                            <p>×</p>
+                        </div>`;
+            }
+            $('.showPic').html(str);
+            console.log(111111)
+        }
+
+            // 删除事件
+        // $('.imgwrap').on('click', function() {
+        //     alert(1)
+        //     allImgs.splice(0, 1);
+        //     alert(2)
+        //     renderImg();
+        //     alert(3)
+        // })
+        // wangchaoxiugai-jieshu
 
         // Keyboard
         $body.on('keydown', function (e) {
