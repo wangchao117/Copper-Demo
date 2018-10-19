@@ -1252,6 +1252,7 @@
         }
     });
 
+    // 变化框的大小时触发
     $.extend(prototype, {
         change: function (shiftKey, originalEvent) {
             var options = this.options;
