@@ -5,6 +5,9 @@ $(function () {
     var console = window.console || { log: function () { } };
     var $body = $('body');
 
+    // wangchaogai  初始化右边结构，展示图片结构隐藏题目结构
+      
+    // wangchaogai-jieshu
 
     // Tooltip
     $('[data-toggle="tooltip"]').tooltip();
@@ -221,7 +224,10 @@ $(function () {
                     mydata["encodedImage"] = encode;
                     var dataStr = JSON.stringify(mydata);
                     allImgs.push(dataStr);
-                    console.log(allImgs)
+                    // wangchaogai 加图片结构
+                    $('.showPic').show();
+                    $('.showTimu').hide();
+                    // wangchaogai-jieshu
                     $("#loading").hide();
                 }
 
