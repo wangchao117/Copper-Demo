@@ -6,7 +6,8 @@ $(function () {
     var $body = $('body');
 
     // wangchaogai  初始化右边结构，展示图片结构隐藏题目结构
-      
+    $('.showPic').show();
+    $('.showTimu').hide();
     // wangchaogai-jieshu
 
     // Tooltip
@@ -211,9 +212,11 @@ $(function () {
                 }
 
                 if (data.method === 'crop' && result) {
-                    $("#loading").show();
                     var formData = new FormData();
-                    var encode = result.toDataURL().replace('data:image/png;base64,', '');
+                    // wangchaogai 需要展示图片所以不能正则
+                    // var encode = result.toDataURL().replace('data:image/png;base64,', '');
+                    var encode = result.toDataURL();
+                    // wangchaogai-jieshu
                     if ($image.attr('src') == 'img/blank.png') {
                         var imgType = fileType.split('/')[1];
                     } else {
@@ -223,12 +226,21 @@ $(function () {
                     mydata["type"] = imgType.toUpperCase();
                     mydata["encodedImage"] = encode;
                     var dataStr = JSON.stringify(mydata);
-                    allImgs.push(dataStr);
+                    allImgs.push(mydata);
+                    console.log(mydata.encodedImage)
                     // wangchaogai 加图片结构
                     $('.showPic').show();
                     $('.showTimu').hide();
+                    var str
+                    for (var i=0; i<allImgs.length; i++) {
+                        str += `<div class="imgwrap">
+                                    <span>`+ (i + 1) +`</span>
+                                    <img src="`+ allImgs[i].encodedImage +`" alt="">
+                                    <p>×</p>
+                                    </div>`;
+                    }
+                    $('.showPic').html(str);
                     // wangchaogai-jieshu
-                    $("#loading").hide();
                 }
 
                 if (data.method === 'getCroppedCanvas' && result) {
@@ -271,6 +283,11 @@ $(function () {
                         traditional: true,
                         timeout: 60000,
                         success: function (data) {
+                            // wangchaogai 隐藏图片结构，展示题目结构，并清空数组
+                            $('.showPic').hide();
+                            $('.showTimu').show();
+                            allImgs = [];
+                            // wangchaogai-jieshu
                             $("#loading").hide();
                             console.log('success: ' + JSON.stringify(data));
                             //alert('Upload success');
@@ -302,6 +319,9 @@ $(function () {
                             $("#show_code").html(html).show();
                         },
                         error: function (e) {
+                            // wangchaoxiugai 清空数组
+                            allImgs = [];
+                            // wangchaoxiugai-jieshu
                             $("#loading").hide();
                             if (e.statusText == 'timeout') {
                                 var errorStr = 'Request timeout';

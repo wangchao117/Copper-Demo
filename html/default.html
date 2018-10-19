@@ -199,8 +199,62 @@
           </div>
         </div>
         <div class="showPic">
-          123
+          <p>开始截取图片吧...</p>
+          <!-- 循环结构 -->
+          <!-- <div class="imgwrap">
+            <span>1</span>
+            <img src="./img/add.png" alt="">
+            <p>×</p>
+          </div> -->
         </div>
+        <style>
+          .showPic{
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 20px !important;
+          }
+          .showPic .imgwrap{
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 20px !important;
+            position: relative;
+            border-bottom: 1px solid #999;
+            padding: 4px 0;
+          }
+          .showPic .imgwrap span{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-size: 24px;
+            font-weight: 900;
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #000;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+          }
+          .showPic .imgwrap img{
+            width: 80%;
+            height: auto;
+            margin-left: 10%;
+          }
+          .showPic .imgwrap p{
+            font-size: 40px;
+            font-weight: 500;
+            color: red;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            border: 3px solid red;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+          }
+        </style>
       </div>
     </div>
   </div>
