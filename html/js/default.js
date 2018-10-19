@@ -43,8 +43,9 @@ $(function () {
             }
         };
 
-        // 放裁剪的图片合集
+        // wangchaogai放裁剪的图片合集
         var allImgs = [];
+        // wangchaogai-jieshu
 
         $image.on({
             'build.cropper': function (e) {
@@ -164,6 +165,7 @@ $(function () {
 
             $image.cropper('destroy').cropper(options);
         });
+
         // Methods
         $actions.on('click', '[data-method]', function () {
             var $this = $(this);

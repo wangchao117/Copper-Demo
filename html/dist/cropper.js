@@ -2427,6 +2427,8 @@
         '</div>'
     );
 
+
+
     // Save the other cropper
     Cropper.other = $.fn.cropper;
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,211 +21,225 @@
   <![endif]-->
   <script>
     function goToSearchResults() {
-    	var qtxt = $("#show_code").text();
-    	localStorage.setItem("searchText",qtxt);
-        //location.href = 'list.html';
-        window.open("list.html"); //open it in a new window
+      var qtxt = $("#show_code").text();
+      localStorage.setItem("searchText", qtxt);
+      //location.href = 'list.html';
+      window.open("list.html"); //open it in a new window
 
     }
   </script>
-  
+
 </head>
+
 <body>
   <div id="crop-avatar">
-	<div class="w1000 clearfix">
-        <div class="left fl por">
-            <div id="loading" class="hid">处理中...</div>
-            <div class="img-container">
-            	<img src="img/blank.png" alt="Picture">
-            </div>
-            <div class="docs-buttons" id="show_box_inner">
-                <!-- <h3 class="page-header">Toolbar:</h3> -->
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary" data-method="setDragMode" data-option="move" title="Move">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;setDragMode&quot;, &quot;move&quot;)">
-                      <span class="fa fa-arrows"></span>
-                    </span>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-method="setDragMode" data-option="crop" title="Crop">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;setDragMode&quot;, &quot;crop&quot;)">
-                      <span class="fa fa-crop"></span>
-                    </span>
-                  </button>
-                </div>
-        
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary" data-method="zoom" data-option="0.1" title="Zoom In">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, 0.1)">
-                      <span class="fa fa-search-plus"></span>
-                    </span>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-method="zoom" data-option="-0.1" title="Zoom Out">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, -0.1)">
-                      <span class="fa fa-search-minus"></span>
-                    </span>
-                  </button>
-                </div>
-        
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary" data-method="move" data-option="-10" data-second-option="0" title="Move Left">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;move&quot;, -10, 0)">
-                      <span class="fa fa-arrow-left"></span>
-                    </span>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-method="move" data-option="10" data-second-option="0" title="Move Right">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;move&quot;, 10, 0)">
-                      <span class="fa fa-arrow-right"></span>
-                    </span>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="-10" title="Move Up">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;move&quot;, 0, -10)">
-                      <span class="fa fa-arrow-up"></span>
-                    </span>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="10" title="Move Down">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;move&quot;, 0, 10)">
-                      <span class="fa fa-arrow-down"></span>
-                    </span>
-                  </button>
-                </div>
-        
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary" data-method="rotate" data-option="-45" title="Rotate Left">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, -45)">
-                      <span class="fa fa-rotate-left"></span>
-                    </span>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-method="rotate" data-option="45" title="Rotate Right">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, 45)">
-                      <span class="fa fa-rotate-right"></span>
-                    </span>
-                  </button>
-                </div>
-        
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary" data-flip="horizontal" data-method="scale" data-option="-1" data-second-option="1" title="Flip Horizontal">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;scale&quot;, -1, 1)">
-                      <span class="fa fa-arrows-h"></span>
-                    </span>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-flip="vertical" data-method="scale" data-option="1" data-second-option="-1" title="Flip Vertical">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;scale&quot;, 1, -1)">
-                      <span class="fa fa-arrows-v"></span>
-                    </span>
-                  </button>
-                </div>
-        
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary" data-method="crop" title="Crop">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;crop&quot;)">
-                      <span class="fa fa-check"></span>
-                    </span>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-method="clear" title="Clear">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;clear&quot;)">
-                      <span class="fa fa-remove"></span>
-                    </span>
-                  </button>
-                </div>
-        
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary" data-method="reset" title="Reset">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;reset&quot;)">
-                      <span class="fa fa-refresh"></span>
-                    </span>
-                  </button>
-                  <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
-                    <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="Import image with Blob URLs">
-                      <span class="fa fa-upload"></span>
-                    </span>
-                  </label>
-                  <button type="button" class="btn btn btn-success" data-method="getCroppedCanvas">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;getCroppedCanvas&quot;)">
-                      识 别
-                    </span>
-                  </button>
-                </div>
-                <div class="btn-group">
-                	<button aria-expanded="false" aria-haspopup="true" data-toggle="modal" data-target="#screenshot_popup" class="btn btn-warning dropdown-toggle" type="button">截屏</button>
-                </div>
-                <!-- Show the cropped image in modal -->
-                <div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="getCroppedCanvasTitle">Cropped</h4>
-                      </div>
-                      <div class="modal-body"></div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <a class="btn btn-primary" id="download" download="cropped.png" href="javascript:void(0);">Download</a>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- /.modal -->
-           </div>
+    <div class="w1000 clearfix">
+      <div class="left fl por">
+        <div id="loading" class="hid">处理中...</div>
+        <div class="img-container docs-buttons">
+          <img src="img/blank.png" alt="Picture">
         </div>
-        <div class="right fr">
-            <div class="show">
-                <h3>展示</h3>
-                <div class="show_main">
-                    <div id="show_code_math" class="hid">
-                          <div dir="ltr">
-                            <div dir="ltr">5.方程组${{{\left \{\begin{array}{*{20}c}{x +y^{2}=6,}\\ {y=x}\end{array} \right .}}}$的解为()</div>
-                          </div>
-                    </div>
+        <div class="docs-buttons" id="show_box_inner">
+          <!-- <h3 class="page-header">Toolbar:</h3> -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-method="setDragMode" data-option="move" title="Move">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;setDragMode&quot;, &quot;move&quot;)">
+                <span class="fa fa-arrows"></span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="setDragMode" data-option="crop" title="Crop">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;setDragMode&quot;, &quot;crop&quot;)">
+                <span class="fa fa-crop"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-method="zoom" data-option="0.1" title="Zoom In">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, 0.1)">
+                <span class="fa fa-search-plus"></span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="zoom" data-option="-0.1" title="Zoom Out">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, -0.1)">
+                <span class="fa fa-search-minus"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-method="move" data-option="-10" data-second-option="0"
+              title="Move Left">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;move&quot;, -10, 0)">
+                <span class="fa fa-arrow-left"></span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="move" data-option="10" data-second-option="0"
+              title="Move Right">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;move&quot;, 10, 0)">
+                <span class="fa fa-arrow-right"></span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="-10"
+              title="Move Up">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;move&quot;, 0, -10)">
+                <span class="fa fa-arrow-up"></span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="10"
+              title="Move Down">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;move&quot;, 0, 10)">
+                <span class="fa fa-arrow-down"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-method="rotate" data-option="-45" title="Rotate Left">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, -45)">
+                <span class="fa fa-rotate-left"></span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="rotate" data-option="45" title="Rotate Right">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, 45)">
+                <span class="fa fa-rotate-right"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-flip="horizontal" data-method="scale" data-option="-1"
+              data-second-option="1" title="Flip Horizontal">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;scale&quot;, -1, 1)">
+                <span class="fa fa-arrows-h"></span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-flip="vertical" data-method="scale" data-option="1"
+              data-second-option="-1" title="Flip Vertical">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;scale&quot;, 1, -1)">
+                <span class="fa fa-arrows-v"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-method="crop" title="Crop">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;crop&quot;)">
+                <span class="fa fa-check"></span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="clear" title="Clear">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;clear&quot;)">
+                <span class="fa fa-remove"></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-method="reset" title="Reset">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;reset&quot;)">
+                <span class="fa fa-refresh"></span>
+              </span>
+            </button>
+            <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+              <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+              <span class="docs-tooltip" data-toggle="tooltip" title="Import image with Blob URLs">
+                <span class="fa fa-upload"></span>
+              </span>
+            </label>
+            <button type="button" class="btn btn btn-success" data-method="getCroppedCanvas">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;getCroppedCanvas&quot;)">
+                识 别
+              </span>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button aria-expanded="false" aria-haspopup="true" data-toggle="modal" data-target="#screenshot_popup"
+              class="btn btn-warning dropdown-toggle" type="button">截屏</button>
+          </div>
+          <!-- Show the cropped image in modal -->
+          <div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle"
+            role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="getCroppedCanvasTitle">Cropped</h4>
                 </div>
-            </div>
-            <div class="btn-group search-list">
-              <a id='searchQuestion' href="javascript:void(0)" onclick="javascript:goToSearchResults()" class="btn btn-default">搜索题库</a>
-            </div>
-            <div class="code_ori ">
-                <h3>源码</h3>
-                <div class="code_ori_main">
-                    <div id="show_code"></div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <a class="btn btn-primary" id="download" download="cropped.png" href="javascript:void(0);">Download</a>
                 </div>
+              </div>
             </div>
-		</div>
+          </div><!-- /.modal -->
+        </div>
+      </div>
+      <div class="right fr">
+        <div class="showTimu">
+          <div class="show">
+            <h3>展示</h3>
+            <div class="show_main">
+              <div id="show_code_math" class="hid">
+                <div dir="ltr">
+                  <div dir="ltr">5.方程组${{{\left \{\begin{array}{*{20}c}{x +y^{2}=6,}\\ {y=x}\end{array} \right .}}}$的解为()</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-group search-list">
+            <a id='searchQuestion' href="javascript:void(0)" onclick="javascript:goToSearchResults()" class="btn btn-default">搜索题库</a>
+          </div>
+          <div class="code_ori ">
+            <h3>源码</h3>
+            <div class="code_ori_main">
+              <div id="show_code"></div>
+            </div>
+          </div>
+        </div>
+        <div class="showPic">
+          
+        </div>
+      </div>
     </div>
   </div>
 
 
-<!--弹出层 end-->
-<div aria-hidden="false" class="note-image-dialog modal in" role="dialog" id="screenshot_popup">
-  <div class="modal-dialog">
-    
-    <div class="modal-content">
-      <div class="modal-header">
-        <button tabindex="-1" aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
-        <h4 class="modal-title">截屏</h4>
-      </div>
-      <div class="modal-body">
-        <div id='screening' style='display:none'>
-           <img src='./img/loadin2.gif'/>
-           截屏中...
+  <!--弹出层 end-->
+  <div aria-hidden="false" class="note-image-dialog modal in" role="dialog" id="screenshot_popup">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button tabindex="-1" aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
+          <h4 class="modal-title">截屏</h4>
         </div>
-        <div class="form-group row-fluid">
-          <label>HTTP地址</label>
-          <input type="text" id="screen_url" class="note-image-url form-control span12" placeholder="输入http地址">
+        <div class="modal-body">
+          <div id='screening' style='display:none'>
+            <img src='./img/loadin2.gif' />
+            截屏中...
+          </div>
+          <div class="form-group row-fluid">
+            <label>HTTP地址</label>
+            <input type="text" id="screen_url" class="note-image-url form-control span12" placeholder="输入http地址">
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-      	<label class="error-tips" id="error_msg"></label>
-        <button class="btn btn-primary note-image-btn" id="cut_screen">确认</button>
+        <div class="modal-footer">
+          <label class="error-tips" id="error_msg"></label>
+          <button class="btn btn-primary note-image-btn" id="cut_screen">确认</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!--弹出层 start-->
+  <!--弹出层 start-->
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/tooltip.min.js"></script>
-<script src="dist/cropper.js"></script>
-<script src="js/default.js"></script>
-<script type="text/x-mathjax-config">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/tooltip.min.js"></script>
+  <script src="dist/cropper.js"></script>
+  <script src="js/default.js"></script>
+  <script type="text/x-mathjax-config">
 var html;
 function init(){
 	html = document.getElementById("show_code_math").innerHTML;
@@ -246,6 +261,7 @@ function init(){
 }
 init();
 </script>
-<script type="text/javascript" src="dist/mathjax/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+  <script type="text/javascript" src="dist/mathjax/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
+
 </html>
