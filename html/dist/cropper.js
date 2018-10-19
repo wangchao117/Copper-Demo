@@ -2401,6 +2401,11 @@
         '<div class="cropper-canvas"></div>' +
         '<div class="cropper-drag-box"></div>' +
         '<div class="cropper-crop-box">' +
+        '<button type="button" class="btn btn-primary" data-method="crop" title="Crop">' +
+        '<span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;crop&quot;)">' +
+        '<span class="fa fa-check"></span>' +
+        '</span>' +
+        '</button>' +
         '<span class="cropper-view-box"></span>' +
         '<span class="cropper-dashed dashed-h"></span>' +
         '<span class="cropper-dashed dashed-v"></span>' +
