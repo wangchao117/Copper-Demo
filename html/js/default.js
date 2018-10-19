@@ -225,7 +225,6 @@ $(function () {
                     var mydata = {};
                     mydata["type"] = imgType.toUpperCase();
                     mydata["encodedImage"] = encode;
-                    var dataStr = JSON.stringify(mydata);
                     allImgs.push(mydata);
                     console.log(mydata.encodedImage)
                     // wangchaogai 加图片结构
@@ -237,7 +236,7 @@ $(function () {
                                     <span>`+ (i + 1) +`</span>
                                     <img src="`+ allImgs[i].encodedImage +`" alt="">
                                     <p>×</p>
-                                    </div>`;
+                                </div>`;
                     }
                     $('.showPic').html(str);
                     // wangchaogai-jieshu
