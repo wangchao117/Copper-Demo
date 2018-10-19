@@ -266,6 +266,14 @@ $(function () {
                     mydata["type"] = imgType.toUpperCase();
                     mydata["encodedImage"] = encode;
                     var dataStr = JSON.stringify(mydata);
+
+                    // wangchaogai  上面的废了，需要改接口传数组
+                    for (var i=0; i<allImgs.length; i++) {
+                        allImgs[i].encodedImage = (allImgs[i].encodedImage).toDataURL().replace('data:image/png;base64,', '');
+                        allImgs[i].encodedImage = 
+                    }
+                    // wangchaogai-jieshu
+
                     $.ajax({
                         url: '/RecoServices/image/ADDRESS/USA',
                         headers: {
