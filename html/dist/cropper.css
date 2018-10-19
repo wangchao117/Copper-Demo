@@ -34,30 +34,16 @@
 
   image-orientation: 0deg !important;
 }
-.cropper-crop-box1{
-  background: #000;
-  top: 150px;
-  right: 0;
-  bottom: 0;
-  left: 150px;
 
-}
-.cropper-crop-box2{
-  background: #ccc;
-  top: 200px;
-  right: 0;
-  bottom: 0;
-  left: 200px;
-}
 .cropper-canvas,
 .cropper-drag-box,
 .cropper-crop-box,
 .cropper-modal {
   position: absolute;
-  top: 100px;
+  top: 0;
   right: 0;
   bottom: 0;
-  left: 100px;
+  left: 0;
 }
 
 .cropper-drag-box {

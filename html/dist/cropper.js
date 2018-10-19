@@ -404,14 +404,8 @@
             this.$canvas = $cropper.find('.cropper-canvas').append($clone);
             this.$dragBox = $cropper.find('.cropper-drag-box');
             this.$cropBox = $cropBox = $cropper.find('.cropper-crop-box');
-            this.$cropBox1 = $cropBox = $cropper.find('.cropper-crop-box1');
-            this.$cropBox2 = $cropBox = $cropper.find('.cropper-crop-box2');
             this.$viewBox = $cropper.find('.cropper-view-box');
-            this.$viewBox1 = $cropper.find('.cropper-view-box1');
-            this.$viewBox2 = $cropper.find('.cropper-view-box2');
             this.$face = $face = $cropBox.find('.cropper-face');
-            this.$face1 = $face = $cropBox.find('.cropper-face1');
-            this.$face2 = $face = $cropBox.find('.cropper-face2');
 
             // Hide the original image
             $this.addClass(CLASS_HIDDEN).after($cropper);
@@ -439,14 +433,10 @@
 
             if (!options.guides) {
                 $cropBox.find('.cropper-dashed').addClass(CLASS_HIDDEN);
-                $cropBox.find('.cropper-dashed1').addClass(CLASS_HIDDEN);
-                $cropBox.find('.cropper-dashed2').addClass(CLASS_HIDDEN);
             }
 
             if (!options.center) {
                 $cropBox.find('.cropper-center').addClass(CLASS_HIDDEN);
-                $cropBox.find('.cropper-center1').addClass(CLASS_HIDDEN);
-                $cropBox.find('.cropper-center2').addClass(CLASS_HIDDEN);
             }
 
             if (options.cropBoxMovable) {
@@ -463,8 +453,6 @@
 
             if (!options.cropBoxResizable) {
                 $cropBox.find('.cropper-line, .cropper-point').addClass(CLASS_HIDDEN);
-                $cropBox.find('.cropper-line1, .cropper-point1').addClass(CLASS_HIDDEN);
-                $cropBox.find('.cropper-line2, .cropper-point2').addClass(CLASS_HIDDEN);
             }
 
             this.setDragMode(options.dragCrop ? ACTION_CROP : (options.movable ? ACTION_MOVE : ACTION_NONE));
@@ -2411,7 +2399,6 @@
         '<div class="cropper-container">' +
         '<div class="cropper-canvas"></div>' +
         '<div class="cropper-drag-box"></div>' +
-        // 1
         '<div class="cropper-crop-box">' +
         '<span class="cropper-view-box"></span>' +
         '<span class="cropper-dashed dashed-h"></span>' +
@@ -2422,46 +2409,6 @@
         '<span class="cropper-line line-n" data-action="n"></span>' +
         '<span class="cropper-line line-w" data-action="w"></span>' +
         '<span class="cropper-line line-s" data-action="s"></span>' +
-        '<span class="cropper-point point-e" data-action="e"></span>' +
-        '<span class="cropper-point point-n" data-action="n"></span>' +
-        '<span class="cropper-point point-w" data-action="w"></span>' +
-        '<span class="cropper-point point-s" data-action="s"></span>' +
-        '<span class="cropper-point point-ne" data-action="ne"></span>' +
-        '<span class="cropper-point point-nw" data-action="nw"></span>' +
-        '<span class="cropper-point point-sw" data-action="sw"></span>' +
-        '<span class="cropper-point point-se" data-action="se"></span>' +
-        '</div>' +
-        // 2
-        '<div class="cropper-crop-box1">' +
-        '<span class="cropper-view-box1"></span>' +
-        '<span class="cropper-dashed1 dashed-h"></span>' +
-        '<span class="cropper-dashed1 dashed-v"></span>' +
-        '<span class="cropper-center1"></span>' +
-        '<span class="cropper-face1"></span>' +
-        '<span class="cropper-line1 line-e" data-action="e"></span>' +
-        '<span class="cropper-line1 line-n" data-action="n"></span>' +
-        '<span class="cropper-line1 line-w" data-action="w"></span>' +
-        '<span class="cropper-line1 line-s" data-action="s"></span>' +
-        '<span class="cropper-point point-e" data-action="e"></span>' +
-        '<span class="cropper-point point-n" data-action="n"></span>' +
-        '<span class="cropper-point point-w" data-action="w"></span>' +
-        '<span class="cropper-point point-s" data-action="s"></span>' +
-        '<span class="cropper-point point-ne" data-action="ne"></span>' +
-        '<span class="cropper-point point-nw" data-action="nw"></span>' +
-        '<span class="cropper-point point-sw" data-action="sw"></span>' +
-        '<span class="cropper-point point-se" data-action="se"></span>' +
-        '</div>' +
-        // 3
-        '<div class="cropper-crop-box2">' +
-        '<span class="cropper-view-box2"></span>' +
-        '<span class="cropper-dashed2 dashed-h"></span>' +
-        '<span class="cropper-dashed2 dashed-v"></span>' +
-        '<span class="cropper-center2"></span>' +
-        '<span class="cropper-face2"></span>' +
-        '<span class="cropper-line2 line-e" data-action="e"></span>' +
-        '<span class="cropper-line2 line-n" data-action="n"></span>' +
-        '<span class="cropper-line2 line-w" data-action="w"></span>' +
-        '<span class="cropper-line2 line-s" data-action="s"></span>' +
         '<span class="cropper-point point-e" data-action="e"></span>' +
         '<span class="cropper-point point-n" data-action="n"></span>' +
         '<span class="cropper-point point-w" data-action="w"></span>' +
