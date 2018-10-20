@@ -185,12 +185,17 @@
                 <div dir="ltr">
                   <div dir="ltr"></div>
                 </div>
+                <!-- 提升到结构内部，方便循环结构 -->
+                <div class="btn-group search-list">
+                  <a id='searchQuestion' href="javascript:void(0)" onclick="javascript:goToSearchResults()" class="btn btn-default">搜索题库</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="btn-group search-list">
+          <!-- 提升到结构内部，方便循环结构 -->
+          <!-- <div class="btn-group search-list">
             <a id='searchQuestion' href="javascript:void(0)" onclick="javascript:goToSearchResults()" class="btn btn-default">搜索题库</a>
-          </div>
+          </div> -->
           <!-- demo的查看源码不需要了 -->
           <!-- <div class="code_ori ">
             <h3>源码</h3>
@@ -209,6 +214,16 @@
           </div> -->
         </div>
         <style>
+          .show_main{
+            position: relative;
+          }
+          .search-list{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+          }
+
+
           .showPic{
             width: 100% !important;
             height: auto !important;
