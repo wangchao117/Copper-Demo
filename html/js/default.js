@@ -293,13 +293,14 @@ $(function () {
                             allImgs = [];
                             // wangchaogai-jieshu
                             $("#loading").hide();
-                            console.log('success: ' + JSON.stringify(data));
+                            // console.log('success: ' + JSON.stringify(data));
                             //alert('Upload success');
 
                             var headDiv = $mathDisp.children().first();
                             //clear div
                             headDiv.html('');
                             var mapObj = data.values;
+                            console.log(mapObj)
                             var divPrefix = '<div dir="ltr">';
                             var divAftfix = '</div>'
                             //var total = mapObj.total;
@@ -312,7 +313,7 @@ $(function () {
                                 customDiv.text(mapObj[key]);
                                 headDiv.append(customDiv);
                             }
-                            console.log(headDiv.html());
+                            // console.log(headDiv.html());
                             var html = headDiv.html();
                             //display math
 
