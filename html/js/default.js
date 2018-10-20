@@ -6,8 +6,8 @@ $(function () {
     var $body = $('body');
 
     // wangchaogai  初始化右边结构，展示图片结构隐藏题目结构
-    $('.showPic').show();
-    $('.showTimu').hide();
+    $('.showPic').hide();
+    $('.showTimu').show();
     // wangchaogai-jieshu
 
     // Tooltip
@@ -319,8 +319,11 @@ $(function () {
                             $mathDisp.show();
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
-                            //var html = document.getElementById("show_code_math").innerHTML;
-                            $("#show_code").html(html).show();
+                            // var html = document.getElementById("show_code_math").innerHTML;
+
+                            // wangchaoxiugai  demo的查看源码不需要了
+                            // $("#show_code").html(html).show();
+                            // wangchaoxiugai-jieshu
                         },
                         error: function (e) {
                             // wangchaoxiugai 清空数组
