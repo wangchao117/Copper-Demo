@@ -226,14 +226,15 @@ $(function () {
                     mydata["type"] = imgType.toUpperCase();
                     mydata["encodedImage"] = encode;
                     allImgs.push(mydata);
+                    console.log(allImgs)
                     // wangchaogai 加图片结构
                     $('.showPic').show();
                     $('.showTimu').hide();
                     renderImg();
                     $('.imgwrap').on('click', function() {
-                        // console.log($(this).index());
                         allImgs.splice($(this).index(), 1);
                         this.remove();
+                        console.log(allImgs)
                     })
                     // wangchaogai-jieshu
                 }
@@ -359,7 +360,6 @@ $(function () {
                         </div>`;
             }
             $('.showPic').html(str);
-            console.log(111111)
         }
 
             // 删除事件
