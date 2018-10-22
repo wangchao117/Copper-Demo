@@ -414,6 +414,7 @@
                     $("#content_list").append(obj);
                 }
                 $(".mathContent img").each(function (index, element) {
+                    var src = 'http://yoomath.com' + $(this).attr('src');
                     $(this).attr('src', src);
                 });
             }, 'text');
