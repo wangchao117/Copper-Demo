@@ -1,0 +1,21 @@
+.subjectWrap{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+.subContent{
+    height: 700px;
+    width: 1000px;
+    background: #ffffff;
+    border: 2px solid #e2e2e2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -350px;
+    margin-left: -500px;
+    z-index: 10;
+} 
