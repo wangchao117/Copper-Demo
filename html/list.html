@@ -46,6 +46,8 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="js/mathUtil.js"></script>
     <script type="text/x-mathjax-config">
+        var html;
+        html = document.getElementById("content_list").innerHTML;
         function init(){
             MathJax.Hub.Config({
                 jax: ["input/TeX","output/HTML-CSS"],
