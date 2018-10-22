@@ -316,7 +316,7 @@ $(function () {
                                                 </div>
                                                 <div class="searchWrap">
                                                     <a class='searchQuestion' href="javascript:void(0)"
-                                                        class="btn btn-default">搜索题库</a>
+                                                        class="btn btn-default">查重</a>
                                                 </div>
                                             </div>`;
                             }
