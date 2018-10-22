@@ -138,7 +138,7 @@ a.btn:hover{color:#000!important;}
 .left{width: 732px;}
 .right{width:576px;border-left:1px solid #ddd;padding-bottom: 20px;}
 .show{margin-bottom: 50px;}
-.show_main,.code_ori_main{width:528px;height: 250px;margin: 0 auto;border: 1px solid #ddd; overflow-y:auto;}
+.show_main,.code_ori_main{width:528px;height: auto;margin: 0 auto;border: 1px solid #ddd; overflow-y:auto;}
 .showpic{ position:absolute; top:91px; left:98px; z-index:3;}
 .progress{ margin-top:10px;}
 .hid{ display:none;}

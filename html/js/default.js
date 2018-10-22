@@ -295,36 +295,40 @@ $(function () {
                             $("#loading").hide();
                             // console.log('success: ' + JSON.stringify(data));
                             //alert('Upload success');
+                            
 
-                            var headDiv = $mathDisp.children().first();
-                            //clear div
-                            headDiv.html('');
-                            var mapObj = data.values;
-                            console.log(mapObj)
-                            var divPrefix = '<div dir="ltr">';
-                            var divAftfix = '</div>'
-                            //var total = mapObj.total;
-                            for (var i = 0; i < mapObj.total; i++) {
-                                var key = "entry" + i;
-                                var ltr_e = divPrefix + mapObj[key] + divAftfix;
-                                //alert("ltr: " + ltr_e);
-                                //headDiv.append( $(ltr_e));  //doesnt work
-                                var customDiv = $("<div>");
-                                customDiv.text(mapObj[key]);
-                                headDiv.append(customDiv);
-                            }
-                            // console.log(headDiv.html());
-                            var html = headDiv.html();
-                            //display math
+                            
 
-                            $mathDisp.show();
-                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
-                            // var html = document.getElementById("show_code_math").innerHTML;
+                            // var headDiv = $mathDisp.children().first();
+                            // //clear div
+                            // headDiv.html('');
+                            // var mapObj = data.values;
+                            // console.log(mapObj)
+                            // var divPrefix = '<div dir="ltr">';
+                            // var divAftfix = '</div>'
+                            // //var total = mapObj.total;
+                            // for (var i = 0; i < mapObj.total; i++) {
+                            //     var key = "entry" + i;
+                            //     var ltr_e = divPrefix + mapObj[key] + divAftfix;
+                            //     //alert("ltr: " + ltr_e);
+                            //     //headDiv.append( $(ltr_e));  //doesnt work
+                            //     var customDiv = $("<div>");
+                            //     customDiv.text(mapObj[key]);
+                            //     headDiv.append(customDiv);
+                            // }
+                            // // console.log(headDiv.html());
+                            // var html = headDiv.html();
+                            // //display math
 
-                            // wangchaoxiugai  demo的查看源码不需要了
-                            // $("#show_code").html(html).show();
-                            // wangchaoxiugai-jieshu
+                            // $mathDisp.show();
+                            // MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+
+                            // // var html = document.getElementById("show_code_math").innerHTML;
+
+                            // // wangchaoxiugai  demo的查看源码不需要了
+                            // // $("#show_code").html(html).show();
+                            // // wangchaoxiugai-jieshu
                         },
                         error: function (e) {
                             // wangchaoxiugai 清空数组
