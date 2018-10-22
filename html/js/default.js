@@ -297,11 +297,11 @@ $(function () {
                             //alert('Upload success');
                             
 
+                            // wangchaoxiugai 重写渲染逻辑
                             var allStr;
                             // 模拟
                             for (var k=0; k<3; k++) {
                                 var mapObj = data.values;
-                                console.log(mapObj)
                                 var divPrefix = '<div dir="ltr">';
                                 var divAftfix = '</div>';
                                 var strs = '';
@@ -311,50 +311,26 @@ $(function () {
                                     strs += customDiv;
                                 }
                                 allStr += `<div class="htmlFor">
-                                                <div dir="ltr">
+                                                <div class='ltr' dir="ltr">
                                                     `+ strs +`
                                                 </div>
-                                                <div class="btn-group search-list">
-                                                    <a class='searchQuestion' href="javascript:void(0)" onclick="javascript:goToSearchResults()"
+                                                <div class="searchWrap">
+                                                    <a class='searchQuestion' href="javascript:void(0)"
                                                         class="btn btn-default">搜索题库</a>
                                                 </div>
                                             </div>`;
                             }
-                            console.log(allStr);
                             $mathDisp.html(allStr);
                             $mathDisp.show();
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                            // 新增点击搜索
+                            $(".searchQuestion").on('click', function() {
+                                var qtxt = $(this).parent().parent().find('.ltr').html();
+                                localStorage.setItem("searchText", qtxt);
+                                window.open("list.html");
+                            })
+                            // wangchaoxiugai-jieshu 
 
-
-
-                            // var headDiv = $mathDisp.children().first();
-                            // //clear div
-                            // headDiv.html('');
-                            // var mapObj = data.values;
-                            // console.log(mapObj)
-                            // var divPrefix = '<div dir="ltr">';
-                            // var divAftfix = '</div>'
-                            // //var total = mapObj.total;
-                            // for (var i = 0; i < mapObj.total; i++) {
-                            //     var key = "entry" + i;
-                            //     var ltr_e = divPrefix + mapObj[key] + divAftfix;
-                            //     //alert("ltr: " + ltr_e);
-                            //     //headDiv.append( $(ltr_e));  //doesnt work
-                            //     var customDiv = $("<div>");
-                            //     customDiv.text(mapObj[key]);
-                            //     headDiv.append(customDiv);
-                            // }
-                            // console.log(headDiv.html());
-                            // var html = headDiv.html();
-                            // //display math
-                            // $mathDisp.show();
-                            // MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-
-                            // // var html = document.getElementById("show_code_math").innerHTML;
-
-                            // // wangchaoxiugai  demo的查看源码不需要了
-                            // // $("#show_code").html(html).show();
-                            // // wangchaoxiugai-jieshu
                         },
                         error: function (e) {
                             // wangchaoxiugai 清空数组
