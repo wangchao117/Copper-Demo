@@ -318,16 +318,17 @@ $(function () {
                                                     <a class='searchQuestion' href="javascript:void(0)"
                                                         class="btn btn-default">查重</a>
                                                     <span class="tipWrap cong">
-                                                        使用重复题，题号：HMA002245
+                                                    &nbsp;&nbsp;&nbsp;使用重复题，题号：HMA002245
                                                     </span>
                                                     <span class="tipWrap nocong">
-                                                        已查，无重复题
+                                                    &nbsp;&nbsp;&nbsp;已查，无重复题
                                                     </span>
                                                 </div>
                                             </div>`;
                             }
                             $mathDisp.html(allStr);
                             $mathDisp.show();
+                            $('.nocong').show();
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                             // 新增点击搜索
                             $(".searchQuestion").on('click', function() {
