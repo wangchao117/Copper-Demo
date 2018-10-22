@@ -178,12 +178,18 @@
                             <div id="show_code_math" class="hid">
                                 <!-- 循环结构 -->
                                 <div class="htmlFor">
-                                    <div dir="ltr">
+                                    <div class='ltr' dir="ltr">
+                                        
                                     </div>
                                     <div class="searchWrap">
-                                        <a class='searchQuestion' href="javascript:void(0)
-                                            class="
-                                            btn btn-default">搜索题库</a>
+                                        <a class='searchQuestion' href="javascript:void(0)"
+                                            class="btn btn-default">查重</a>
+                                        <span class="tipWrap cong">
+                                            使用重复题，题号：HMA002245
+                                        </span>
+                                        <span class="tipWrap nocong">
+                                            已查，无重复题
+                                        </span>
                                     </div>
                                 </div>
                                 <!-- 循环结构-结束 -->
@@ -218,18 +224,30 @@
                         margin-bottom: 30px;
                     }
                     .searchWrap{
+                        
+                    }
+                    .searchWrap a{
                         width: 100px;
                         height: 40px;
+                        display: inline-block;
                         background: #337ab7;
                         line-height: 40px;
                         text-align: center;
                         font-size: 24px;
                         margin-top: 20px;
                         border-radius: 4px;
-                    }
-                    .searchWrap a{
                         color: #ffffff;
                         font-size: 16px;
+                    }
+                    .tipWrap{
+                        display: inline-block;
+                        font-size: 14px;
+                    }
+                    .cong{
+                        color: #337ab7;
+                    }
+                    .nocong{
+                        color: red;
                     }
 
                     .showPic{
