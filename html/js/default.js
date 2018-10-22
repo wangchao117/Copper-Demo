@@ -297,8 +297,33 @@ $(function () {
                             //alert('Upload success');
                             
 
-                            
-
+                            var allStr;
+                            for (var k=0; k<3; k++) {
+                                var mapObj = data.values;
+                                var divPrefix = '<div dir="ltr">';
+                                var divAftfix = '</div>';
+                                var strs = '';
+                                for (var i = 0; i < mapObj.total; i++) {
+                                    var key = "entry" + i;
+                                    var ltr_e = divPrefix + mapObj[key] + divAftfix;
+                                    var customDiv = $("<div>");
+                                    customDiv.text(mapObj[key]);
+                                    strs += customDiv;
+                                }
+                                allStr += `<div class="htmlFor">
+                                                <div dir="ltr">
+                                                    `+ strs +`
+                                                </div>
+                                                <div class="btn-group search-list">
+                                                    <a class='searchQuestion' href="javascript:void(0)" onclick="javascript:goToSearchResults()"
+                                                        class="btn btn-default">搜索题库</a>
+                                                </div>
+                                            </div>`;
+                            }
+                            console.log(allStr);
+                            $mathDisp.html(allStr);
+                            $mathDisp.show();
+                            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
                             // var headDiv = $mathDisp.children().first();
                             // //clear div
