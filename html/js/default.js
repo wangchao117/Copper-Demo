@@ -298,16 +298,16 @@ $(function () {
                             
 
                             var allStr;
+                            // 模拟
                             for (var k=0; k<3; k++) {
                                 var mapObj = data.values;
+                                console.log(mapObj)
                                 var divPrefix = '<div dir="ltr">';
                                 var divAftfix = '</div>';
                                 var strs = '';
                                 for (var i = 0; i < mapObj.total; i++) {
                                     var key = "entry" + i;
-                                    var ltr_e = divPrefix + mapObj[key] + divAftfix;
-                                    var customDiv = $("<div>");
-                                    customDiv.text(mapObj[key]);
+                                    var customDiv = `<div>`+ mapObj[key] +`</div>`;
                                     strs += customDiv;
                                 }
                                 allStr += `<div class="htmlFor">
@@ -324,6 +324,8 @@ $(function () {
                             $mathDisp.html(allStr);
                             $mathDisp.show();
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+
+
 
                             // var headDiv = $mathDisp.children().first();
                             // //clear div
@@ -342,10 +344,9 @@ $(function () {
                             //     customDiv.text(mapObj[key]);
                             //     headDiv.append(customDiv);
                             // }
-                            // // console.log(headDiv.html());
+                            // console.log(headDiv.html());
                             // var html = headDiv.html();
                             // //display math
-
                             // $mathDisp.show();
                             // MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
