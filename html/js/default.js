@@ -5,10 +5,10 @@ $(function () {
     var console = window.console || { log: function () { } };
     var $body = $('body');
 
-    // wangchaogai  初始化右边结构，展示图片结构隐藏题目结构
+    // TTTT  初始化右边结构，展示图片结构隐藏题目结构
     $('.showPic').hide();
     $('.showTimu').show();
-    // wangchaogai-jieshu
+    // TTTT-jieshu
 
     // Tooltip
     $('[data-toggle="tooltip"]').tooltip();
@@ -47,9 +47,9 @@ $(function () {
             }
         };
 
-        // wangchaogai放裁剪的图片合集
+        // TTTT放裁剪的图片合集
         var allImgs = [];
-        // wangchaogai-jieshu
+        // TTTT-jieshu
 
         $image.on({
             'build.cropper': function (e) {
@@ -131,9 +131,9 @@ $(function () {
         // Buttons
         if (!$.isFunction(document.createElement('canvas').getContext)) {
             $('button[data-method="getCroppedCanvas"]').prop('disabled', true);
-            // wangchaoxiugai
+            // TTTT
             $('button[data-method="crop"]').prop('disabled', true);
-            // wangchaoxiugaijieshu
+            // TTTTjieshu
         }
 
         if (typeof document.createElement('cropper').style.transition === 'undefined') {
@@ -195,13 +195,13 @@ $(function () {
                     }
                 }
                 
-                // wangchaogai  将crop强行设置为识别的提交方式，不然拿不到canvas数据
+                // TTTT  将crop强行设置为识别的提交方式，不然拿不到canvas数据
                 if (data.method === 'crop') {
                     result = $image.cropper('getCroppedCanvas', data.option, data.secondOption);
                 } else {
                     result = $image.cropper(data.method, data.option, data.secondOption);
                 }   
-                // wangchaogaijieshu
+                // TTTTjieshu
 
                 if (data.flip === 'horizontal') {
                     $(this).data('option', -data.option);
@@ -213,10 +213,10 @@ $(function () {
 
                 if (data.method === 'crop' && result) {
                     var formData = new FormData();
-                    // wangchaogai 需要展示图片所以不能正则
+                    // TTTT 需要展示图片所以不能正则
                     // var encode = result.toDataURL().replace('data:image/png;base64,', '');
                     var encode = result.toDataURL();
-                    // wangchaogai-jieshu
+                    // TTTT-jieshu
                     if ($image.attr('src') == 'img/blank.png') {
                         var imgType = fileType.split('/')[1];
                     } else {
@@ -227,7 +227,7 @@ $(function () {
                     mydata["encodedImage"] = encode;
                     allImgs.push(mydata);
                     // console.log(allImgs)
-                    // wangchaogai 加图片结构
+                    // TTTT 加图片结构
                     $('.showPic').show();
                     $('.showTimu').hide();
                     renderImg();
@@ -236,7 +236,7 @@ $(function () {
                         this.remove();
                         // console.log(allImgs)
                     })
-                    // wangchaogai-jieshu
+                    // TTTT-jieshu
                 }
 
                 if (data.method === 'getCroppedCanvas' && result) {
@@ -245,12 +245,12 @@ $(function () {
                         $("#show_box_inner").after('<div id="upload_imgtips" class="alert alert-danger avatar-alert alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button>recognition error: Please choose a picture</div>');
                         return false;
                     }
-                    // wangchaoxiugai判断是否有图片截取
+                    // TTTT判断是否有图片截取
                     if (allImgs.length === 0) {
                         alert('请先截取图片！');
                         return
                     }
-                    // wangchaoxiugai-jieshu
+                    // TTTT-jieshu
                     $("#loading").show();
                     var formData = new FormData();
                     var encode = result.toDataURL().replace('data:image/png;base64,', '');
@@ -267,7 +267,7 @@ $(function () {
 
                     
 
-                    // wangchaogai  上面的废了，需要改接口传数组
+                    // TTTT  上面的废了，需要改接口传数组
                     for (var i=0; i<allImgs.length; i++) {
                         allImgs[i].encodedImage = (allImgs[i].encodedImage).replace('data:image/png;base64,', '');
                     }
@@ -277,7 +277,7 @@ $(function () {
                         imgJson[key] = allImgs[i];
                     }
                     console.log(imgJson)
-                    // wangchaogai-jieshu
+                    // TTTT-jieshu
 
                     
                     $.ajax({
@@ -299,18 +299,14 @@ $(function () {
                         traditional: true,
                         timeout: 60000,
                         success: function (data) {
-                            // wangchaogai 隐藏图片结构，展示题目结构，并清空数组
+                            // TTTT 隐藏图片结构，展示题目结构，并清空数组
                             $('.showPic').hide();
                             $('.showTimu').show();
                             allImgs = [];
                             imgJson = {};
-                            // wangchaogai-jieshu
+                            // TTTT-jieshu
                             $("#loading").hide();
-                            // console.log('success: ' + JSON.stringify(data));
-                            //alert('Upload success');
-                            
-
-                            // wangchaoxiugai 重写渲染逻辑
+                            // TTTT 重写渲染逻辑
                             var allStr;
                             for (var k = 0; k < data.length; k++) {
                                 var mapObj = data[k].values;
@@ -351,13 +347,13 @@ $(function () {
                                 // window.open("list.html");
                                 console.log(qtxt);
                             })
-                            // wangchaoxiugai-jieshu 
+                            // TTTT-jieshu 
 
                         },
                         error: function (e) {
-                            // wangchaoxiugai 清空数组
+                            // TTTT 清空数组
                             allImgs = [];
-                            // wangchaoxiugai-jieshu
+                            // TTTT-jieshu
                             $("#loading").hide();
                             if (e.statusText == 'timeout') {
                                 var errorStr = 'Request timeout';
@@ -381,7 +377,7 @@ $(function () {
             }
         });
 
-        // wangchaoxiugai
+        // TTTT
         function renderImg() {
             var str
             for (var i=0; i<allImgs.length; i++) {
@@ -394,7 +390,7 @@ $(function () {
             $('.showPic').html(str);
         }
 
-        // wangchaoxiugai-jieshu
+        // TTTT-jieshu
 
         // Keyboard
         $body.on('keydown', function (e) {
