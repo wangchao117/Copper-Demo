@@ -263,6 +263,7 @@ $(function () {
                     mydata["type"] = imgType.toUpperCase();
                     mydata["encodedImage"] = encode;
                     var dataStr = JSON.stringify(mydata);
+                    
 
                     
 
@@ -270,29 +271,29 @@ $(function () {
                     for (var i=0; i<allImgs.length; i++) {
                         allImgs[i].encodedImage = (allImgs[i].encodedImage).replace('data:image/png;base64,', '');
                     }
-                    // 循环改变数据结构
+                    var imgJson = {};
                     for ( var i=0; i<allImgs.length; i++) {
                         var key = 'img' + (i + 1);
-                        allImgs[i] = {[key] : allImgs[i]}
+                        imgJson[key] = allImgs[i];
                     }
-                    allImgs = {...allImgs};
-                    // console.log(allImgs)
+                    console.log(imgJson)
                     // wangchaogai-jieshu
 
                     
                     $.ajax({
-                        url: '/RecoServices/image/ADDRESS/USA',
+                        url: '/batch/ocr',
                         headers: {
                             'accept': 'application/json;charset=UTF-8',
-                            'wyun_user': 'wyunClient',
+                            'wyun_user': 'jimo',
                             'wyun_password': 'lank1ng$',
                             'x_meta': ' ',
                             'x_protocolversion': '1',
                             'Content-Type': 'application/json;charset=UTF-8'
+                            // 'cookie': 'JSESSIONID=C501949B1C242191D3EBDF491D0E9BFE'
                         },
                         method: "POST",
                         dataType: 'json',
-                        data: dataStr,
+                        data: imgJson,
                         traditional: true,
                         timeout: 60000,
                         success: function (data) {
