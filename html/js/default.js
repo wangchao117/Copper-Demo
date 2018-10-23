@@ -303,6 +303,7 @@ $(function () {
                             $('.showPic').hide();
                             $('.showTimu').show();
                             allImgs = [];
+                            imgJson = {};
                             // wangchaogai-jieshu
                             $("#loading").hide();
                             // console.log('success: ' + JSON.stringify(data));
@@ -312,10 +313,8 @@ $(function () {
                             // wangchaoxiugai 重写渲染逻辑
                             var allStr;
                             // 模拟
-                            for (var k=0; k<3; k++) {
-                                var mapObj = data.values;
-                                var divPrefix = '<div dir="ltr">';
-                                var divAftfix = '</div>';
+                            for (var k = 0; k < data.length; k++) {
+                                var mapObj = data[k].values;
                                 var strs = '';
                                 for (var i = 0; i < mapObj.total; i++) {
                                     var key = "entry" + i;
