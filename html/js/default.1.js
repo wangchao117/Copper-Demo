@@ -252,17 +252,17 @@ $(function () {
                     }
                     // wangchaoxiugai-jieshu
                     $("#loading").show();
-                    var formData = new FormData();
-                    var encode = result.toDataURL().replace('data:image/png;base64,', '');
-                    if ($image.attr('src') == 'img/blank.png') {
-                        var imgType = fileType.split('/')[1];
-                    } else {
-                        var imgType = 'png';
-                    }
-                    var mydata = {};
-                    mydata["type"] = imgType.toUpperCase();
-                    mydata["encodedImage"] = encode;
-                    var dataStr = JSON.stringify(mydata);
+                    // var formData = new FormData();
+                    // var encode = result.toDataURL().replace('data:image/png;base64,', '');
+                    // if ($image.attr('src') == 'img/blank.png') {
+                    //     var imgType = fileType.split('/')[1];
+                    // } else {
+                    //     var imgType = 'png';
+                    // }
+                    // var mydata = {};
+                    // mydata["type"] = imgType.toUpperCase();
+                    // mydata["encodedImage"] = encode;
+                    // var dataStr = JSON.stringify(mydata);
 
                     
 
@@ -281,21 +281,23 @@ $(function () {
 
                     
                     $.ajax({
-                        url: '/RecoServices/image/ADDRESS/USA',
+                        url: '/batch/ocr',
                         headers: {
                             'accept': 'application/json;charset=UTF-8',
-                            'wyun_user': 'wyunClient',
+                            'wyun_user': 'jimo',
                             'wyun_password': 'lank1ng$',
                             'x_meta': ' ',
                             'x_protocolversion': '1',
-                            'Content-Type': 'application/json;charset=UTF-8'
+                            'Content-Type': 'application/json;charset=UTF-8',
+                            'cookie': 'JSESSIONID=C501949B1C242191D3EBDF491D0E9BFE'
                         },
                         method: "POST",
                         dataType: 'json',
-                        data: dataStr,
+                        data: allImgs,
                         traditional: true,
                         timeout: 60000,
                         success: function (data) {
+                            console.log(data)
                             // wangchaogai 隐藏图片结构，展示题目结构，并清空数组
                             $('.showPic').hide();
                             $('.showTimu').show();

@@ -97,3 +97,7 @@
 2018/10/18 15:31:14 [error] 6068#8016: *3 CreateFile() "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/index"
 2018/10/20 16:50:42 [error] 11764#9936: *5 CreateFile() "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/default.html"
 2018/10/22 13:05:02 [error] 4864#11848: *5 CreateFile() "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/default.html"
+2018/10/23 14:17:38 [notice] 7236#8340: signal process started
+2018/10/23 14:24:06 [notice] 3180#4052: signal process started
+2018/10/23 14:24:38 [notice] 6212#11312: signal process started
+2018/10/23 14:24:38 [error] 6212#11312: OpenEvent("Global\ngx_reload_7936") failed (2: The system cannot find the file specified)
