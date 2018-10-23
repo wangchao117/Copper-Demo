@@ -273,7 +273,7 @@ $(function () {
                     }
                     var imgJson = {};
                     for ( var i=0; i<allImgs.length; i++) {
-                        var key = 'img' + (i + 1);
+                        var key = 'image' + (i + 1);
                         imgJson[key] = allImgs[i];
                     }
                     console.log(imgJson)
@@ -282,8 +282,10 @@ $(function () {
                     
                     $.ajax({
                         url: '/batch/ocr',
+                        // url: '/RecoServices/image/ADDRESS/USA',
                         headers: {
                             'accept': 'application/json;charset=UTF-8',
+                            // 'wyun_user': 'wyunClient',
                             'wyun_user': 'jimo',
                             'wyun_password': 'lank1ng$',
                             'x_meta': ' ',
@@ -293,7 +295,7 @@ $(function () {
                         },
                         method: "POST",
                         dataType: 'json',
-                        data: imgJson,
+                        data: JSON.stringify(imgJson),
                         traditional: true,
                         timeout: 60000,
                         success: function (data) {
