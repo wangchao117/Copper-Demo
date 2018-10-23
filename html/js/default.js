@@ -312,7 +312,6 @@ $(function () {
 
                             // wangchaoxiugai 重写渲染逻辑
                             var allStr;
-                            // 模拟
                             for (var k = 0; k < data.length; k++) {
                                 var mapObj = data[k].values;
                                 var strs = '';
@@ -344,12 +343,13 @@ $(function () {
                             // 未使用的展示
                             // $('.nocong').show();
                             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                            // 新增点击搜索
+                            // 查重按钮
                             $(".searchQuestion").on('click', function() {
-                                // 查重按钮逻辑， qtxt为list请求参数
+                                // 查重按钮逻辑， qtxt为弹窗list请求参数
                                 var qtxt = $(this).parent().parent().find('.ltr').html();
-                                localStorage.setItem("searchText", qtxt);
-                                window.open("list.html");
+                                // localStorage.setItem("searchText", qtxt);
+                                // window.open("list.html");
+                                console.log(qtxt);
                             })
                             // wangchaoxiugai-jieshu 
 
