@@ -301,31 +301,6 @@
         </div>
     </div>
 
-    <div class="subjectWrap">
-        <div class="subContent">
-            <div class="error-list" id="content_list">
-
-            </div>
-            <div class="hide" id="clone_list">
-                <dl>
-                    <dd class="cont clearfix">
-                        <div class="lin-heig intr clearfix">
-                            <span class="nandu">题目来源：<span class="wh laiyuan source"></span></span>
-                        </div>
-                        <div class="lin-heig clearfix">
-                            <div class="mathContent"></div>
-                        </div>
-                        <div class="lin-heig clearfix lin-heig">
-                            <span class="correct-answer fl">正确答案：</span>
-                            <div class="answer fl">
-                                <p class="answer-detail fl mathAnswers"></p>
-                            </div>
-                        </div>
-                    </dd>
-                </dl>
-            </div>
-        </div>
-    </div>
     <div id="loading" class="hid">处理中...</div>
     <link rel="stylesheet" href="css/subjectWrap.css">
 
@@ -383,60 +358,6 @@
             });
         }
         init();
-    </script>
-    <script>
-        $(function () {
-            var serialize = function (obj) {
-                var str = [];
-                for (var p in obj)
-                    if (obj.hasOwnProperty(p)) {
-                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                    }
-                return str.join("&");
-            }
-
-            function showObject(obj) {
-                var result = "";
-                for (var p in obj) {
-                    if (obj.hasOwnProperty(p)) {
-                        result += p + " , " + obj[p] + "\n";
-                    }
-                }
-                return result;
-            }
-            
-            var searchText = localStorage.getItem("searchText");
-            searchText = $.trim(searchText);
-            var restUrl = '/RecoServices/searchfh';
-            // console.log('url: ' + restUrl);
-            $("#loading").show();
-            $.get(restUrl, { q: 'OCR', searchBy: searchText }, function (res) {
-                $("#loading").hide();
-                // console.log('type of res ' + typeof (res));
-                // console.log('search result: ' + res);
-                var temp = JSON.parse(res);
-                var data = temp.qlist;
-                for (var i = 0; i < data.length; i++) {
-                    // console.log('data: ' + data[i]);
-                }
-                setTimeout(function () {
-                    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                }, 100);
-                for (var i in data) {
-                    var obj = $("#clone_list dl").clone();
-                    obj.find('.difficulty').html('unknown');
-                    obj.find('.allMetaKnowpoint').html('');
-                    obj.find('.source').html(data[i].id);
-                    obj.find('.mathContent').html(data[i].content);
-                    obj.find('.mathAnswers').html('NA');
-                    $("#content_list").append(obj);
-                }
-                $(".mathContent img").each(function (index, element) {
-                    var src = 'http://yoomath.com' + $(this).attr('src');
-                    $(this).attr('src', src);
-                });
-            }, 'text');
-        });
     </script>
     <script type="text/javascript" src="dist/mathjax/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>

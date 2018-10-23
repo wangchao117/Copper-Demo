@@ -226,7 +226,7 @@ $(function () {
                     mydata["type"] = imgType.toUpperCase();
                     mydata["encodedImage"] = encode;
                     allImgs.push(mydata);
-                    console.log(allImgs)
+                    // console.log(allImgs)
                     // wangchaogai 加图片结构
                     $('.showPic').show();
                     $('.showTimu').hide();
@@ -234,7 +234,7 @@ $(function () {
                     $('.imgwrap').on('click', function() {
                         allImgs.splice($(this).index(), 1);
                         this.remove();
-                        console.log(allImgs)
+                        // console.log(allImgs)
                     })
                     // wangchaogai-jieshu
                 }
@@ -247,6 +247,7 @@ $(function () {
                     }*/
                     // Upload cropped image to server
                     //$.ajaxSetup({contentType: 'application/x-www-form-urlencoded'});
+                    console.log(allImgs)
                     if ((fileType == '' || fileType == undefined) && $image.attr('src') == 'img/blank.png') {
                         $("#show_box_inner").after('<div id="upload_imgtips" class="alert alert-danger avatar-alert alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button>recognition error: Please choose a picture</div>');
                         return false;
