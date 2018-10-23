@@ -240,14 +240,7 @@ $(function () {
                 }
 
                 if (data.method === 'getCroppedCanvas' && result) {
-                    /* $('#getCroppedCanvasModal').modal().find('.modal-body').html(result);
-          
-                    if (!$download.hasClass('disabled')) {
-                      $download.attr('href', result.toDataURL());
-                    }*/
-                    // Upload cropped image to server
-                    //$.ajaxSetup({contentType: 'application/x-www-form-urlencoded'});
-                    console.log(allImgs)
+                    
                     if ((fileType == '' || fileType == undefined) && $image.attr('src') == 'img/blank.png') {
                         $("#show_box_inner").after('<div id="upload_imgtips" class="alert alert-danger avatar-alert alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button>recognition error: Please choose a picture</div>');
                         return false;
@@ -269,7 +262,12 @@ $(function () {
                     for (var i=0; i<allImgs.length; i++) {
                         allImgs[i].encodedImage = (allImgs[i].encodedImage).replace('data:image/png;base64,', '');
                     }
-                    console.log(allImgs)
+                    // 循环改变数据结构
+                    for ( var i=0; i<allImgs.length; i++) {
+                        var key = 'img' + (i + 1);
+                        allImgs[i] = {[key] : allImgs[i]}
+                    }
+                    // console.log({...allImgs})
                     // wangchaogai-jieshu
 
                     $.ajax({
@@ -384,14 +382,6 @@ $(function () {
             $('.showPic').html(str);
         }
 
-            // 删除事件
-        // $('.imgwrap').on('click', function() {
-        //     alert(1)
-        //     allImgs.splice(0, 1);
-        //     alert(2)
-        //     renderImg();
-        //     alert(3)
-        // })
         // wangchaoxiugai-jieshu
 
         // Keyboard
