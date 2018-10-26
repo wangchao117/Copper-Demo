@@ -379,7 +379,7 @@ $(function () {
 
         // TTTT
         function renderImg() {
-            var str
+            var str = '';
             for (var i=0; i<allImgs.length; i++) {
                 str += `<div class="imgwrap">
                             <span>`+ (i + 1) +`</span>
