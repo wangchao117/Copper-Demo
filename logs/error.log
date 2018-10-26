@@ -1,0 +1,1 @@
+2018/10/26 18:54:33 [error] 6464#7112: *1 CreateFile() "C:\Users\chao.wang\Desktop\MyGitHub\Copper-Demo/html/list.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /list.html HTTP/1.1", host: "localhost:8000"
